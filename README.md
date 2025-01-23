@@ -150,12 +150,12 @@ Esta guía describe cómo establecer una conexión a una base de datos relaciona
 
    2.Inserta datos de prueba en la tabla:
 
-   ![image](https://github.com/user-attachments/assets/e863ad50-6900-475e-82e1-5b76b5775829)
+![image](https://github.com/user-attachments/assets/e863ad50-6900-475e-82e1-5b76b5775829)
 
 
    3.Verifica los datos insertados:
 
-   ![image](https://github.com/user-attachments/assets/3f10ca3e-2ef0-4f60-88b9-c330fc3febac)
+ ![image](https://github.com/user-attachments/assets/3f10ca3e-2ef0-4f60-88b9-c330fc3febac)
 
 
 ### Desde Scala establezca la conexión a la base datos
@@ -169,6 +169,36 @@ Esta guía describe cómo establecer una conexión a una base de datos relaciona
      2.Descargar el controlador JDBC para MySQL (https://dev.mysql.com/downloads/connector/j/). 
      
      3.Agregar el archivo .jar del conector al classpath del proyecto.
+     
+```scala
+   libraryDependencies += "mysql" % "mysql-connector-java" % "8.0.29"
+
+```
+    
+![image](https://github.com/user-attachments/assets/78f68984-f9ea-4fd8-af12-3f55e0530713)
+
+# Código Scala
+
+El siguiente código establece una conexión a la base de datos y muestra los datos de la tabla usuarios:
+
+```scala
+
+```
+
+**Conexión a la Base de Datos:**
+
+Se utiliza DriverManager.getConnection para conectar a la base de datos testdb.
+
+Asegúrate de reemplazar "tu_contraseña" con la contraseña de tu base de datos.
+
+**Consulta SQL:**
+
+El código ejecuta una consulta SELECT * FROM usuarios para obtener todos los registros de la tabla usuarios.
+
+**Impresión de Resultados:**
+
+Utiliza un ResultSet para recorrer y mostrar los datos obtenidos de la consulta.
+
 
 
 
