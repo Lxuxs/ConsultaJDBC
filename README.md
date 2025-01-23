@@ -265,6 +265,21 @@ Utiliza un ResultSet para recorrer y mostrar los datos obtenidos de la consulta.
 ```
 ![image](https://github.com/user-attachments/assets/d153987d-2ffa-4c58-b204-a35715764e0c)
 
+## Referencias:
+**IBM JDBC - What is JDBC**
+https://www.ibm.com/docs/es/informix-servers/12.10?topic=started-what-is-jdbc
+
+**Baeldung - Introducción a Slick (Scala)**
+https://www.baeldung.com/scala/slick-intro
+
+**Baeldung - Introducción a Doobie (Scala)**
+https://www.baeldung.com/scala/doobie-intro
+
+**MySQL - Crear una Tabla**
+https://dev.mysql.com/doc/refman/8.0/en/create-table.html
+
+**CodersFree - Creación de Tablas en MySQL (Curso)**
+https://codersfree.com/courses-status/aprende-php-y-mysql-desde-cero/creacion-de-tablas-en-mysql
 
 
 
