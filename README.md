@@ -182,22 +182,91 @@ Esta guía describe cómo establecer una conexión a una base de datos relaciona
 El siguiente código establece una conexión a la base de datos y muestra los datos de la tabla usuarios:
 
 ```scala
+import java.sql.{Connection, DriverManager, ResultSet}
 
+object ConsultaMySQL {
+  def main(args: Array[String]): Unit = {
+    // Datos de conexión
+    val url = "jdbc:mysql://localhost:3306/testdb"  // URL de conexión
+    val user = "root"                              // Usuario de MySQL
+    val password = "root"                 // Contraseña de MySQL
+
+    var connection: Connection = null
+
+    try {
+      // Cargar el controlador JDBC
+      Class.forName("com.mysql.cj.jdbc.Driver")
+
+      // Establecer la conexión
+      connection = DriverManager.getConnection(url, user, password)
+      println("Conexión establecida correctamente.")
+
+      // Crear una declaración para ejecutar la consulta
+      val statement = connection.createStatement()
+
+      // Ejecutar la consulta para seleccionar todos los datos de la tabla 'usuarios'
+      val resultSet: ResultSet = statement.executeQuery("SELECT * FROM usuarios")
+
+      // Imprimir los resultados
+      println("Datos de la tabla 'usuarios':")
+      while (resultSet.next()) {
+        val id = resultSet.getInt("id")
+        val nombre = resultSet.getString("nombre")
+        val correo = resultSet.getString("correo")
+        println(s"ID: $id, Nombre: $nombre, Correo: $correo")
+      }
+    } catch {
+      case e: Exception =>
+        // Si hay un error, imprimir el mensaje
+        e.printStackTrace()
+    } finally {
+      // Cerrar la conexión si se ha establecido
+      if (connection != null) connection.close()
+    }
+  }
+}
 ```
 
 **Conexión a la Base de Datos:**
 
 Se utiliza DriverManager.getConnection para conectar a la base de datos testdb.
+```Scala
+// Establecer la conexión
+      connection = DriverManager.getConnection(url, user, password)
+      println("Conexión establecida correctamente.")
+```
+![image](https://github.com/user-attachments/assets/747eebaa-26c7-42e2-9ff7-38e9e3b167fe)
+
 
 Asegúrate de reemplazar "tu_contraseña" con la contraseña de tu base de datos.
+![image](https://github.com/user-attachments/assets/439aa5f8-3aac-4611-a88c-fa673bb9751c)
+
 
 **Consulta SQL:**
 
 El código ejecuta una consulta SELECT * FROM usuarios para obtener todos los registros de la tabla usuarios.
+```Scala
+ // Ejecutar la consulta para seleccionar todos los datos de la tabla 'usuarios'
+      val resultSet: ResultSet = statement.executeQuery("SELECT * FROM usuarios")
+```
 
 **Impresión de Resultados:**
 
 Utiliza un ResultSet para recorrer y mostrar los datos obtenidos de la consulta.
+```Scala
+// Imprimir los resultados
+      println("Datos de la tabla 'usuarios':")
+      while (resultSet.next()) {
+        val id = resultSet.getInt("id")
+        val nombre = resultSet.getString("nombre")
+        val correo = resultSet.getString("correo")
+        println(s"ID: $id, Nombre: $nombre, Correo: $correo")
+      }
+```
+![image](https://github.com/user-attachments/assets/d153987d-2ffa-4c58-b204-a35715764e0c)
+
+
+
 
 
 
