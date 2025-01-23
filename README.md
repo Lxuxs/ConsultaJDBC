@@ -119,6 +119,78 @@ En Scala, dos de las principales bibliotecas utilizadas para interactuar con bas
 
  ![image](https://github.com/user-attachments/assets/4c0d2400-1478-4832-8618-e56e5baca25d)
 
+## Documentar cómo establecer una conexión a una base de datos relacional (mysql). Siga los siguientes pasos:
+
+# Conexión a una Base de Datos MySQL desde Scala
+
+Esta guía describe cómo establecer una conexión a una base de datos relacional MySQL desde Scala. Sigue los pasos descritos para crear una base de datos, una tabla con datos de prueba y realizar la conexión desde Scala.
+
+### Genere una base de datos en mysql
+
+**1. Crear una Base de Datos en MySQL**
+
+  1.Abre tu cliente MySQL (MySQL Workbench, phpMyAdmin o terminal).
+
+  2.Ejecuta el siguiente comando para crear una base de datos llamada testdb:
+
+![image](https://github.com/user-attachments/assets/6c09512c-4237-458d-9c81-b37fc225e0b6)
+
+  3.Selecciona la base de datos creada:
+
+  ![image](https://github.com/user-attachments/assets/7323c841-18a5-4181-85d1-6f4cb248b323)
+
+### Genere una tabla con datos de prueba
+
+**2. Crear una Tabla con Datos de Prueba**
+
+   1.Crea una tabla llamada usuarios:
+
+   ![image](https://github.com/user-attachments/assets/17d140dc-7704-4146-a954-611070f54bff)
+
+
+   2.Inserta datos de prueba en la tabla:
+
+   ![image](https://github.com/user-attachments/assets/e863ad50-6900-475e-82e1-5b76b5775829)
+
+
+   3.Verifica los datos insertados:
+
+   ![image](https://github.com/user-attachments/assets/3f10ca3e-2ef0-4f60-88b9-c330fc3febac)
+
+
+### Desde Scala establezca la conexión a la base datos
+
+**3. Establecer la Conexión desde Scala**
+
+     Requisitos previos
+     
+     1.Tener instalado Scala y un IDE o entorno compatible(https://www.jetbrains.com/es-es/idea/download/?section=windows).
+     
+     2.Descargar el controlador JDBC para MySQL (https://dev.mysql.com/downloads/connector/j/). 
+     
+     3.Agregar el archivo .jar del conector al classpath del proyecto.
+
+
+
+
+   
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
 
 
 
